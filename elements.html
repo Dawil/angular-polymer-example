@@ -1,0 +1,22 @@
+<polymer-element name="x-display"
+  attributes="title body">
+  <template>
+    <h2>{{title}}</h2>
+    <p>{{body}}</p>
+    <p ng-controller="XDisplayController" ng-bind="text"></p>
+  </template>
+  <script>
+    Polymer('x-display', {
+      created: function() {
+        var that = this;
+        var $injector = angular.injector(['ng']);
+        $injector.invoke(function($rootScope, $compile) {
+          //TODO uncomment me to make it crash
+          //$compile(that.impl)($rootScope);
+        });
+      },
+      title: "",
+      body: ""
+    });
+  </script>
+</polymer-element>

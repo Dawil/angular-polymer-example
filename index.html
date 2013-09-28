@@ -1,0 +1,19 @@
+<html ng-app="myApp">
+  <head>
+    <title>Angular+Polymer=&hearts;</title>
+    <script src="lib/polymer.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="import" href="elements.html">
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <section ng-controller="PeopleController">
+      <h1>People</h1>
+      <input ng-model="query" type="text">
+      <x-display ng-repeat="p in people | filter:query" title="{{ p.name }}" body="{{ p.body }}"></x-display>
+    </section>
+  </body>
+</html>
